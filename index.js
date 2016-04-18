@@ -12,6 +12,7 @@
 // 4. WIT_TOKEN=your_access_token FB_PAGE_ID=your_page_id FB_PAGE_TOKEN=your_page_token FB_VERIFY_TOKEN=verify_token node examples/messenger.js
 // 5. Subscribe your page to the Webhooks using verify_token and `https://<your_ngrok_io>/fb` as callback URL.
 // 6. Talk to your bot on Messenger!
+
 // WIT_TOKEN = "YEPD2AX6MTGM27OY6HNDDX5YDIIJES3C";
 // FB_PAGE_ID = "1540266056267560";
 // FB_PAGE_TOKEN = "EAActanPq6woBAN8bWMqN0dmnrbmQMUVZCuevqYXKi2lIt8Kc2Iae5MzhOOpF0aZAfRxc8WGn50x65sy7S25xNoW5jtDA80CI3yJRiigWUQ5Xio1ca6YTUyVLoLmgZAAmNUxpmAxuuTiZBaaIvZBZBzXayZBZAdJVdIZBFAySM0Iw4WQZDZD";
@@ -32,18 +33,15 @@ const PORT = process.env.PORT || 8445;
 const WIT_TOKEN = process.env.WIT_TOKEN;
 
 // Messenger API parameters
-// const FB_PAGE_ID = process.env.FB_PAGE_ID && Number(process.env.FB_PAGE_ID);
-const FB_PAGE_ID = "1540266056267560";
+const FB_PAGE_ID = process.env.FB_PAGE_ID && Number(process.env.FB_PAGE_ID);
 if (!FB_PAGE_ID) {
   throw new Error('missing FB_PAGE_ID');
 }
-// const FB_PAGE_TOKEN = process.env.FB_PAGE_TOKEN;
-const FB_PAGE_TOKEN = "EAActanPq6woBAN8bWMqN0dmnrbmQMUVZCuevqYXKi2lIt8Kc2Iae5MzhOOpF0aZAfRxc8WGn50x65sy7S25xNoW5jtDA80CI3yJRiigWUQ5Xio1ca6YTUyVLoLmgZAAmNUxpmAxuuTiZBaaIvZBZBzXayZBZAdJVdIZBFAySM0Iw4WQZDZD";
+const FB_PAGE_TOKEN = process.env.FB_PAGE_TOKEN;
 if (!FB_PAGE_TOKEN) {
   throw new Error('missing FB_PAGE_TOKEN');
 }
-// const FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN;
-const FB_VERIFY_TOKEN = "anytoken_yes";
+const FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN;
 
 // Messenger API specific code
 
